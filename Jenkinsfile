@@ -1,18 +1,16 @@
+@Library('exec-shared-lib') _
+@Library('project-shared-lib') _
+
 pipeline {
-    agent any
+  agent any
 
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
+  stages {
+    stage('Build') {
+      steps {
+        script {
+          PERMavenlib(name: 'demo-app-jen')
         }
-
-        stage('Maven Build') {
-            steps {
-                sh 'mvn -version'
-                sh 'mvn clean test'
-            }
-        }
+      }
     }
+  }
 }
