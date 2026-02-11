@@ -1,6 +1,5 @@
 @Library(['exec-shared-lib', 'project-shared-lib']) _
 
-
 pipeline {
   agent any
 
